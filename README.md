@@ -76,30 +76,32 @@ The use of the term `n-1` is commonly referred to as Bessel's correction. Note, 
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/stats-base-varianceyc
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var varianceyc = require( '@stdlib/stats-base-varianceyc' );
+varianceyc = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-varianceyc@umd/browser.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-varianceyc@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.varianceyc;
+})();
+</script>
 ```
 
 #### varianceyc( N, correction, x, stride )
@@ -198,11 +200,16 @@ var v = varianceyc.ndarray( N, 1, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var randu = require( '@stdlib/random-base-randu' );
-var round = require( '@stdlib/math-base-special-round' );
-var Float64Array = require( '@stdlib/array-float64' );
-var varianceyc = require( '@stdlib/stats-base-varianceyc' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-varianceyc@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 var x;
 var i;
@@ -215,6 +222,11 @@ console.log( x );
 
 var v = varianceyc( x.length, 1, x, 1 );
 console.log( v );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -325,19 +337,19 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/stats/base/svarianceyc]: https://github.com/stdlib-js/stats-base-svarianceyc
+[@stdlib/stats/base/svarianceyc]: https://github.com/stdlib-js/stats-base-svarianceyc/tree/umd
 
 [@youngs:1971a]: https://doi.org/10.1080/00401706.1971.10488826
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dvarianceyc]: https://github.com/stdlib-js/stats-base-dvarianceyc
+[@stdlib/stats/base/dvarianceyc]: https://github.com/stdlib-js/stats-base-dvarianceyc/tree/umd
 
-[@stdlib/stats/base/nanvarianceyc]: https://github.com/stdlib-js/stats-base-nanvarianceyc
+[@stdlib/stats/base/nanvarianceyc]: https://github.com/stdlib-js/stats-base-nanvarianceyc/tree/umd
 
-[@stdlib/stats/base/stdevyc]: https://github.com/stdlib-js/stats-base-stdevyc
+[@stdlib/stats/base/stdevyc]: https://github.com/stdlib-js/stats-base-stdevyc/tree/umd
 
-[@stdlib/stats/base/variance]: https://github.com/stdlib-js/stats-base-variance
+[@stdlib/stats/base/variance]: https://github.com/stdlib-js/stats-base-variance/tree/umd
 
 <!-- </related-links> -->
 
