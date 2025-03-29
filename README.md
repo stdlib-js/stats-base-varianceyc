@@ -103,38 +103,32 @@ The use of the term `n-1` is commonly referred to as Bessel's correction. Note, 
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-varianceyc
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-varianceyc = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-varianceyc@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var varianceyc = require( 'path/to/vendor/umd/stats-base-varianceyc/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-varianceyc@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.varianceyc;
-})();
-</script>
+var varianceyc = require( '@stdlib/stats-base-varianceyc' );
 ```
 
 #### varianceyc( N, correction, x, stride )
@@ -221,7 +215,7 @@ var v = varianceyc.ndarray( N, 1, x, 2, 1 );
 
 -   If `N <= 0`, both functions return `NaN`.
 -   If `N - c` is less than or equal to `0` (where `c` corresponds to the provided degrees of freedom adjustment), both functions return `NaN`.
--   Depending on the environment, the typed versions ([`dvarianceyc`][@stdlib/stats/base/dvarianceyc], [`svarianceyc`][@stdlib/stats/base/svarianceyc], etc.) are likely to be significantly more performant.
+-   Depending on the environment, the typed versions ([`dvarianceyc`][@stdlib/stats/strided/dvarianceyc], [`svarianceyc`][@stdlib/stats/base/svarianceyc], etc.) are likely to be significantly more performant.
 
 </section>
 
@@ -233,16 +227,11 @@ var v = varianceyc.ndarray( N, 1, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-varianceyc@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var Float64Array = require( '@stdlib/array-float64' );
+var varianceyc = require( '@stdlib/stats-base-varianceyc' );
 
 var x;
 var i;
@@ -255,11 +244,6 @@ console.log( x );
 
 var v = varianceyc( x.length, 1, x, 1 );
 console.log( v );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -286,7 +270,7 @@ console.log( v );
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/stats-base/dvarianceyc`][@stdlib/stats/base/dvarianceyc]</span><span class="delimiter">: </span><span class="description">calculate the variance of a double-precision floating-point strided array using a one-pass algorithm proposed by Youngs and Cramer.</span>
+-   <span class="package-name">[`@stdlib/stats-strided/dvarianceyc`][@stdlib/stats/strided/dvarianceyc]</span><span class="delimiter">: </span><span class="description">calculate the variance of a double-precision floating-point strided array using a one-pass algorithm proposed by Youngs and Cramer.</span>
 -   <span class="package-name">[`@stdlib/stats-base/nanvarianceyc`][@stdlib/stats/base/nanvarianceyc]</span><span class="delimiter">: </span><span class="description">calculate the variance of a strided array ignoring NaN values and using a one-pass algorithm proposed by Youngs and Cramer.</span>
 -   <span class="package-name">[`@stdlib/stats-base/stdevyc`][@stdlib/stats/base/stdevyc]</span><span class="delimiter">: </span><span class="description">calculate the standard deviation of a strided array using a one-pass algorithm proposed by Youngs and Cramer.</span>
 -   <span class="package-name">[`@stdlib/stats-base/variance`][@stdlib/stats/base/variance]</span><span class="delimiter">: </span><span class="description">calculate the variance of a strided array.</span>
@@ -321,7 +305,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -373,19 +357,19 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/stats/base/svarianceyc]: https://github.com/stdlib-js/stats-base-svarianceyc/tree/umd
+[@stdlib/stats/base/svarianceyc]: https://github.com/stdlib-js/stats-base-svarianceyc
 
 [@youngs:1971a]: https://doi.org/10.1080/00401706.1971.10488826
 
 <!-- <related-links> -->
 
-[@stdlib/stats/base/dvarianceyc]: https://github.com/stdlib-js/stats-base-dvarianceyc/tree/umd
+[@stdlib/stats/strided/dvarianceyc]: https://github.com/stdlib-js/stats-strided-dvarianceyc
 
-[@stdlib/stats/base/nanvarianceyc]: https://github.com/stdlib-js/stats-base-nanvarianceyc/tree/umd
+[@stdlib/stats/base/nanvarianceyc]: https://github.com/stdlib-js/stats-base-nanvarianceyc
 
-[@stdlib/stats/base/stdevyc]: https://github.com/stdlib-js/stats-base-stdevyc/tree/umd
+[@stdlib/stats/base/stdevyc]: https://github.com/stdlib-js/stats-base-stdevyc
 
-[@stdlib/stats/base/variance]: https://github.com/stdlib-js/stats-base-variance/tree/umd
+[@stdlib/stats/base/variance]: https://github.com/stdlib-js/stats-base-variance
 
 <!-- </related-links> -->
 
