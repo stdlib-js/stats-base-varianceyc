@@ -4,7 +4,29 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-03-30)
+## Unreleased (2025-04-10)
+
+<section class="features">
+
+### Features
+
+-   [`fab8c0e`](https://github.com/stdlib-js/stdlib/commit/fab8c0e11830344ff842ebac4f601e9710353a2a) - add accessor protocol support to `stats/base/varianceyc` [(#5891)](https://github.com/stdlib-js/stdlib/pull/5891)
+
+</section>
+
+<!-- /.features -->
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#5692](https://github.com/stdlib-js/stdlib/issues/5692)
+
+</section>
+
+<!-- /.issues -->
 
 <section class="commits">
 
@@ -12,6 +34,7 @@
 
 <details>
 
+-   [`fab8c0e`](https://github.com/stdlib-js/stdlib/commit/fab8c0e11830344ff842ebac4f601e9710353a2a) - **feat:** add accessor protocol support to `stats/base/varianceyc` [(#5891)](https://github.com/stdlib-js/stdlib/pull/5891) _(by Pulkit Gupta, Athan Reines, stdlib-bot)_
 -   [`3ec0e00`](https://github.com/stdlib-js/stdlib/commit/3ec0e0024c24e64ca7726f51f30bfe70c3b23201) - **refactor:** update paths _(by Aayush Khanna)_
 -   [`b3cc07f`](https://github.com/stdlib-js/stdlib/commit/b3cc07f34d99c6d87e98edd43e830116da6488af) - **refactor:** update paths _(by Aayush Khanna)_
 
@@ -25,9 +48,11 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Aayush Khanna
+-   Athan Reines
+-   Pulkit Gupta
 
 </section>
 
